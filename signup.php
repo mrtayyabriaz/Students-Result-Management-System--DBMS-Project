@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LMS</title>
+  <title>RMS</title>
   <!--====================== stylesheets ==========================-->
   <link rel="stylesheet" href="style/CSS/style.css">
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
@@ -82,7 +82,7 @@
                         if ($status == "student") {
                           echo '<label class=" form-label h5 fw-bold " for="StudentID">Student ID (CNIC)</label>
                           <input class="form-control dark-theme" autocomplete="on" type="number" id="StudentID"
-                            name="student_ID" autofocus="autofocus" />';
+                            name="StudentID" autofocus="autofocus" />';
                         }
                         else if ($status == "teacher") {
                           echo '<label class=" form-label h5 fw-bold " for="TeacherID">Teacher ID (CNIC)</label>
@@ -115,7 +115,7 @@
                       <i class="fas fa-lock fa-lg me-3 fa-fw formicon" style="transform: translate(0px, -22px);"></i>
                       <div class="form-outline flex-fill mb-0">
                         <div class="dflex" style="justify-content: space-between;">
-                          <label class="form-label h5 fw-bold" for="Password">Password</label>
+                          <label class="form-label h5 fw-bold" for="password">Password</label>
                           <div class="pointer" style="color:#7d11f3">
                             <i class="fas fa-eye fa-solid" id="showicon"></i>
                             <div onclick="showpass(this)" class="btn"
@@ -123,7 +123,7 @@
                           </div>
                         </div>
                         <div class="dflex" style="align-items: flex-start">
-                          <input class="form-control dark-theme" autocomplete="on" type="Password" id="Password"
+                          <input class="form-control dark-theme" autocomplete="on" type="password" id="password"
                             name="Password" />
                         </div>
                       </div>

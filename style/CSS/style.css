@@ -52,6 +52,35 @@
   padding-left: 2px;
 }
 
+.justify-input {
+  width: 96% !important;
+  padding-left: 2rem;
+}
+
+.ClassContainerBorder {
+  margin: 26px 12px 26px 12px;
+  padding: 2px 12px 2px 12px;
+  border-radius: 10px;
+  border: 2px solid #5093ff;
+  box-shadow: rgba(131, 179, 255, 0.75) 0px 0px 9px inset;
+}
+
+.SubjectContainerBorder {
+  margin: 26px 12px 26px 12px;
+  padding: 2px 12px 2px 12px;
+  border-radius: 10px;
+  border: 2px solid #ad40ff;
+  box-shadow: rgba(206, 141, 255, 0.76) 0px 0px 9px inset;
+}
+
+.StudentContainerBorder {
+  margin: 26px 12px 26px 12px;
+  padding: 2px 12px 2px 12px;
+  border-radius: 10px;
+  border: 2px solid #22eb83;
+  box-shadow: rgba(143, 255, 143, 0.8117647059) 0px 0px 9px inset;
+}
+
 .select_status {
   width: 100%;
   display: flex;
@@ -63,7 +92,7 @@
 }
 
 .container.mycontainer {
-  background-color: rgb(190, 190, 190);
+  background: linear-gradient(360deg, rgb(176, 176, 176), rgb(190, 190, 190));
   border-radius: 10px;
   margin-top: 10px;
 }
@@ -85,6 +114,7 @@
   justify-content: center;
   text-decoration: none;
   padding: 2rem;
+  transition: 0.2s;
 }
 .container.mycontainer .selectioncontainer .teacher {
   background: linear-gradient(218deg, rgb(225, 31, 255), #0501e5);
@@ -97,10 +127,43 @@
   justify-content: center;
   text-decoration: none;
   padding: 2rem;
+  transition: 0.2s;
 }
 .container.mycontainer .selectioncontainer .student:hover,
 .container.mycontainer .selectioncontainer .teacher:hover {
   box-shadow: 2px 2px 0px 0px rgb(219, 219, 219);
+  transform: translate(2px, 2px);
+}
+
+.DownloadProject {
+  padding: 15px 2vw 15px 2vw;
+}
+.DownloadProject .col-2 {
+  padding: 10px;
+}
+.DownloadProject .col-2 .mybtn {
+  box-shadow: 2px 2px 0px 1px rgb(242, 242, 242);
+  transition: 0.3s;
+}
+.DownloadProject .col-2 .mybtn a {
+  text-decoration: none;
+  color: white;
+}
+.DownloadProject .col-2 .mybtn:hover {
+  box-shadow: 0px 0px 0px 0px rgb(242, 242, 242);
+  transform: translate(2px, 2px);
+}
+.DownloadProject .col-9 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: flex-start;
+  padding: 10px;
+}
+.DownloadProject .col-9 a {
+  text-decoration: none;
+  color: rgba(60, 104, 255, 0.88);
+  font-weight: 700;
 }
 
 .loginsection {
@@ -197,10 +260,10 @@
   color: #7d11f3;
 }
 .TeacherClasses h4 a {
-  color: #0005bc;
+  color: rgb(181, 44, 252);
 }
 .TeacherClasses .container {
-  background: linear-gradient(315deg, rgba(100, 129, 255, 0.44), rgba(235, 79, 255, 0.33));
+  background: rgba(209, 209, 209, 0.37);
   box-shadow: 1px 1px 3px #818181;
   border-radius: 4px;
   padding-top: 20px;
@@ -223,20 +286,83 @@
 #AddClassForm .AddClassInput {
   color: black;
 }
+#AddClassForm .AddClassInput::-moz-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(163, 163, 163) !important;
+  opacity: 1; /* Firefox */
+}
+#AddClassForm .AddClassInput::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(163, 163, 163) !important;
+  opacity: 1; /* Firefox */
+}
 
-#classlist a {
+#classlist,
+#StudentList,
+#SubjectList {
+  width: 94%;
+  font-size: 1.6rem;
+}
+#classlist li a,
+#StudentList li a,
+#SubjectList li a {
   color: #0005bc;
   text-decoration: none;
   display: block;
+  padding-right: 0px;
 }
-#classlist a li, #classlist a .ManageSubject {
-  background: linear-gradient(90deg, #87b5ff, rgba(251, 34, 255, 0.45));
+#classlist li a .subjectname,
+#classlist li a .ManageSubject,
+#StudentList li a .subjectname,
+#StudentList li a .ManageSubject,
+#SubjectList li a .subjectname,
+#SubjectList li a .ManageSubject {
+  color: #f3f3f3;
+  text-shadow: 0px 0px 4px #333333;
+  background: linear-gradient(0deg, rgba(135, 181, 255, 0.7098039216), rgba(251, 34, 255, 0.45));
   padding: 3px;
   padding-left: 0.4rem;
   margin-top: 4px;
   margin-bottom: 4px;
-  border-radius: 4px;
+  border-radius: 4px 0px 0px 4px;
   font-weight: bold;
+}
+#classlist li .thebutton,
+#StudentList li .thebutton,
+#SubjectList li .thebutton {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  color: white;
+  text-transform: uppercase;
+}
+#classlist li .edit,
+#StudentList li .edit,
+#SubjectList li .edit {
+  background: #de9102;
+  border-radius: 0px;
+  font-weight: bold;
+}
+#classlist li .edit :hover,
+#StudentList li .edit :hover,
+#SubjectList li .edit :hover {
+  background: #d18b09 !important;
+}
+#classlist li .edit a,
+#StudentList li .edit a,
+#SubjectList li .edit a {
+  color: white !important;
+}
+#classlist li .delete,
+#StudentList li .delete,
+#SubjectList li .delete {
+  background: #c72400;
+  border-radius: 0px 4px 4px 0px;
+  font-weight: bold;
+}
+#classlist li .delete :hover,
+#StudentList li .delete :hover,
+#SubjectList li .delete :hover {
+  background: #980200;
 }
 
 .ManageSubjectContainer a {
@@ -246,9 +372,11 @@
 }
 .ManageSubjectContainer a .ManageSubject {
   padding: 3px;
-  background: linear-gradient(90deg, #87b5ff, rgba(251, 34, 255, 0.45));
+  background: linear-gradient(90deg, rgba(67, 139, 255, 0.9411764706), rgba(251, 34, 255, 0.65));
+  color: #fdfbff;
+  text-shadow: 0px 0px 10px #00149c;
   padding-left: 0.4rem;
-  margin-top: 4px;
+  margin-top: 10px;
   margin-bottom: 4px;
   border-radius: 4px;
   font-weight: bold;
@@ -257,8 +385,64 @@
   display: flex;
 }
 
+.totalmarks {
+  font-size: 2em;
+  /* font-weight: bold; */
+  padding: 1px 5px 1px 9px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.totalmarksTeacher {
+  font-size: 2em;
+  padding: 1px 5px 1px 9px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(171, 171, 171, 0.71);
+}
+
+.StudentDiv {
+  border-top: 1px rgba(105, 255, 112, 0.768627451) dashed;
+  padding: 10px 0px 10px 0px;
+}
+
+.StudentResultform {
+  background: linear-gradient(45deg, #5f9cff, rgba(251, 34, 255, 0.75)) !important;
+}
+
+.studentresultinput {
+  background: transparent !important;
+  padding: 4px;
+  padding-left: 0.4rem;
+  font-size: 1.4rem !important;
+  font-weight: bold !important;
+}
+
+.studentInputText {
+  color: #00db2b !important;
+  color: #ffffff !important;
+  text-shadow: 2px 2px 0px #0b6d00;
+}
+
+.SResultinputdiv {
+  text-align: center;
+}
+
+.thestudentlog {
+  border: 0px !important;
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+          user-select: none !important;
+  border-bottom: 2px solid white !important;
+  border-radius: 0px !important;
+  text-align: left;
+}
+
 .dark-mood {
-  background: rgb(31, 29, 31) !important;
+  background: rgb(40, 42, 53) !important;
   color: white !important;
   border-color: rgb(172, 172, 172) !important;
 }

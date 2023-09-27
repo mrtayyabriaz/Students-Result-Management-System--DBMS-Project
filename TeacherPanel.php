@@ -1,12 +1,17 @@
-<?php
-session_start();
-?>
+<?php session_start();
+if (isset($_SESSION['Login'])) {
+  if (!isset($_SESSION['TID'])) {
+    echo '<script>
+              window.location.assign("StudentPanel.php");
+          </script>';
+  }
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LMS</title>
+  <title>RMS</title>
   <!--====================== stylesheets ==========================-->
   <link rel="stylesheet" href="style/CSS/style.css">
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
@@ -19,7 +24,7 @@ session_start();
   <?php include 'nevbar.php'; ?>
 
 
-  <!--===================== your classes ================= -->
+  <!--===================== Teacher Name ================= -->
   <section class="TeacherClasses">
     <h4>Teacher
       <?php if (isset($_SESSION['Name'])) {
@@ -29,91 +34,32 @@ session_start();
         echo "<a href='logout.php'>Login...</a>";
       } ?>
     </h4>
-    <div class="container">
-      <h2 class="YourClass">
-        Your Classes
-      </h2>
-      <div class="Classlist">
-        <ul id="classlist">
-
-          <?php
-          $TeacherID = $_SESSION['TID'];
-          include 'submit/dbconnect.php';
-
-          $query = "SELECT * FROM class Where `TeacherID` = $TeacherID";
-          if ($result = mysqli_query($link, $query)) {
-            if (mysqli_num_rows($result) > 0) {
-              while ($row = mysqli_fetch_array($result)) {
-                echo "<a href='SubjectList.php?ClassID=" . $row['ClassID'] . "'><li >" . $row['Classname'] . "</li></a>";
-              }
-            }
-            else {
-              echo "No Class added";
-            }
-          }
-          ?>
-        </ul>
-      </div>
-    </div>
   </section>
-  <!--===================== your classes ================= -->
+  <!--===================== Teacher Name ================= -->
 
-  <!--===================== Add Class status ================= -->
+
+  <!--===================== Manage Subject ================= -->
   <section class="TeacherClasses">
     <div class="container">
-
-
-      <div class="dflex">
-        <div id="AddClassStatus" style="width:100%;display:none;">
-          <p class=signsuccess>
-            Class Added Successfully
-            <span class=xmark onclick=hide(this.parentNode.parentNode)>
-              <i class='fa-solid fa-xmark'></i>
-            </span>
-          <p>
-        </div>
-      </div>
-
-      <!--===================== Add Class status ================= -->
-
-
-      <!--===================== Add Class ================= -->
-
-      <h2 class="YourClass">Add Class</h2>
-      <form method="post" id="AddClassForm">
-        <label for="AddClassName" class="pe-2">Class Name</label>
-        <div class="input-group w-75">
-          <input type="text" name="AddClassName" placeholder="Class Name"
-            class="form-control w-50 AddClassInput dark-theme" id="AddClassName">
-          <div class="input-group-append">
-            <button class="btn mybtn text-white" type="button" onclick=AddClassfun()
-              style="border-top-left-radius:0px;border-bottom-left-radius:0px;">Add</button>
-          </div>
-        </div>
-      </form>
-
-    </div>
-  </section>
-
-  <!--===================== Add Class ================= -->
-
-
-
-
-
-  <!--===================== your classes ================= -->
-  <section class="TeacherClasses">
-
-    <div class="container">
+      <!--====== Manage calsses ======= -->
       <div class="ManageSubjectContainer">
-          <a href='SubjectList.php'>
-            <div class="ManageSubject">Manage Subjects</div>
-          </a>
+        <a href='ClassList.php'>
+          <div class="ManageSubject">Manage All Classes</div>
+        </a>
       </div>
+      <!--====== Manage calsses ======= -->
+
+
+      <!--====== Manage Subject ======= -->
+      <div class="ManageSubjectContainer">
+        <a href='SubjectList.php'>
+          <div class="ManageSubject">Manage All Subjects</div>
+        </a>
+      </div>
+      <!--====== Manage Subject ======= -->
     </div>
   </section>
-  <!--===================== your classes ================= -->
-
+  <!--===================== Manage Subject ================= -->
 
 
 

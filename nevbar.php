@@ -36,7 +36,7 @@
         id="pillNav2" role="tablist"
         style="background:#7d11f3!important;--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
         <li class="nav-item w-75" role="presentation">
-          <a class="nav-link rounded-5" href="index.html" id="HomeTab" type="button" role="tab"
+          <a class="nav-link rounded-5" href="index.php" id="HomeTab" type="button" role="tab"
             aria-selected="true">Home</a>
         </li>
         <li class="nav-item  w-75" role="presentation">

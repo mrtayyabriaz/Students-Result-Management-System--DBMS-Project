@@ -53,8 +53,35 @@
     padding-left: 2px;
   }
 }
-
+.justify-input {
+  width: 96% !important;
+  padding-left: 2rem;
+}
 //====================== universal ======================
+
+//====================== color Section ===========================
+.ClassContainerBorder {
+  margin: 26px 12px 26px 12px;
+  padding: 2px 12px 2px 12px;
+  border-radius: 10px;
+  border: 2px solid #5093ff;
+  box-shadow: rgb(131 179 255 / 75%) 0px 0px 9px inset;
+}
+.SubjectContainerBorder {
+  margin: 26px 12px 26px 12px;
+  padding: 2px 12px 2px 12px;
+  border-radius: 10px;
+  border: 2px solid #ad40ff;
+  box-shadow: rgb(206 141 255 / 76%) 0px 0px 9px inset;
+}
+.StudentContainerBorder {
+  margin: 26px 12px 26px 12px;
+  padding: 2px 12px 2px 12px;
+  border-radius: 10px;
+  border: 2px solid #22eb83;
+  box-shadow: #8fff8fcf 0px 0px 9px inset;
+}
+//====================== color Section ===========================
 
 //============================= index page ===============================
 .select_status {
@@ -68,7 +95,8 @@
 
 // }
 .container.mycontainer {
-  background-color: rgb(190, 190, 190);
+  // background-color: rgb(190, 190, 190);
+  background: linear-gradient(360deg, rgb(176 176 176), rgb(190, 190, 190));
   border-radius: 10px;
   margin-top: 10px;
 
@@ -88,6 +116,7 @@
       @include dflex;
       text-decoration: none;
       padding: 2rem;
+      transition: 0.2s;
     }
     .teacher {
       background: linear-gradient(218deg, rgb(225 31 255), #0501e5);
@@ -98,10 +127,40 @@
       @include dflex;
       text-decoration: none;
       padding: 2rem;
+      transition: 0.2s;
     }
     .student:hover,
     .teacher:hover {
       box-shadow: 2px 2px 0px 0px rgb(219 219 219);
+      transform: translate(2px, 2px);
+    }
+  }
+}
+.DownloadProject{
+  padding: 15px 2vw 15px 2vw;
+  .col-2{
+    padding: 10px;
+    .mybtn{
+      box-shadow: 2px 2px 0px 1px rgb(242, 242, 242);
+      transition: 0.3s;
+      a{
+        text-decoration: none;
+        color: white;
+      }
+    }
+    .mybtn:hover{
+      box-shadow: 0px 0px 0px 0px rgb(242, 242, 242);
+      transform: translate(2px, 2px);
+    }
+  }
+  .col-9{
+    @include dflex;
+    justify-content: flex-start;
+    padding: 10px;
+    a{
+      text-decoration: none;
+      color: rgb(60 104 255 / 88%);
+      font-weight: 700;
     }
   }
 }
@@ -192,18 +251,15 @@
   flex-direction: column;
   padding-top: 20px;
   padding-bottom: 20px;
-  h4 { 
+  h4 {
     color: #7d11f3;
-    a{
-      color:#0005bc;
+    a {
+      color: rgb(181 44 252);
     }
   }
   .container {
-    background: linear-gradient(
-      315deg,
-      rgb(100 129 255 / 44%),
-      rgb(235 79 255 / 33%)
-    );
+    background: rgb(209 209 209 / 37%);
+    // background:linear-gradient(315deg, rgb(168 184 255 / 72%), rgb(239 146 252 / 91%));
     box-shadow: 1px 1px 3px #818181;
     border-radius: 4px;
     padding-top: 20px;
@@ -223,34 +279,76 @@
   .AddClassInput {
     color: black;
   }
+  .AddClassInput::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(163, 163, 163) !important;
+    opacity: 1; /* Firefox */
+  }
 }
-#classlist {
+#classlist,
+#StudentList,
+#SubjectList {
+  width: 94%;
+  font-size: 1.6rem;
+  li {
+    a {
+      color: #0005bc;
+      text-decoration: none;
+      display: block;
+      padding-right: 0px;
+      .subjectname,
+      .ManageSubject {
+        color: #f3f3f3;
+        text-shadow: 0px 0px 4px #333333;
+        background: linear-gradient(0deg, #87b5ffb5, rgba(251, 34, 255, 0.45));
+        padding: 3px;
+        padding-left: 0.4rem;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        border-radius: 4px 0px 0px 4px;
+        font-weight: bold;
+        // width: 70%;
+      }
+    }
+    .thebutton {
+      margin-top: 4px;
+      margin-bottom: 4px;
+      color: white;
+      text-transform: uppercase;
+    }
+    .edit {
+      background: #de9102;
+      border-radius: 0px;
+      font-weight: bold;
+      :hover {
+        background: #d18b09 !important;
+      }
+      a {
+        color: white !important;
+      }
+    }
+    .delete {
+      background: #c72400;
+      border-radius: 0px 4px 4px 0px;
+      font-weight: bold;
+      :hover {
+        background: #980200;
+      }
+    }
+  }
+}
+.ManageSubjectContainer {
   a {
     color: #0005bc;
     text-decoration: none;
     display: block;
-    li , .ManageSubject{
-      // background: linear-gradient(90deg, #87b5ff, #909bf400);
-      background: linear-gradient(90deg, #87b5ff, rgba(251, 34, 255, 0.45));
+    .ManageSubject {
       padding: 3px;
+      background: linear-gradient(90deg, #438bfff0, rgb(251 34 255 / 65%));
+      color: #fdfbff;
+      text-shadow: 0px 0px 10px #00149c;
       padding-left: 0.4rem;
-      margin-top: 4px;
-      margin-bottom: 4px;
-      border-radius: 4px;
-      font-weight: bold;
-      // width: 70%;
-    }
-  }
-}
-.ManageSubjectContainer{
-  a{
-    color: #0005bc;
-    text-decoration: none;
-    display: block;
-    .ManageSubject{
-      padding: 3px;background: linear-gradient(90deg, #87b5ff, rgb(251 34 255 / 45%));
-      padding-left: 0.4rem;
-      margin-top: 4px;
+      margin-top: 10px;
       margin-bottom: 4px;
       border-radius: 4px;
       font-weight: bold;
@@ -262,9 +360,72 @@
 }
 //============================ Teacher Panel ================================
 
+//============================ Student Panel ================================
+.totalmarks {
+  font-size: 2em;
+  /* font-weight: bold; */
+  padding: 1px 5px 1px 9px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(255 255 255 / 75%);
+}
+.totalmarksTeacher {
+  font-size: 2em;
+  padding: 1px 5px 1px 9px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(171 171 171 / 71%);
+}
+.StudentDiv {
+  border-top: 1px #69ff70c4 dashed;
+  // border-left: 2px #69ff70c4 dashed;
+  // border-right: 2px #69ff70c4 dashed;
+  // border-bottom: 2px #69ff70c4 dashed;
+  // border-radius: 5px;
+  padding: 10px 0px 10px 0px;
+}
+.StudentResultform {
+  background: linear-gradient(45deg, #5f9cff, rgb(251 34 255 / 75%)) !important;
+}
+.studentresultinput {
+  // color: #f3f3f3 !important;
+  background: transparent !important;
+  // text-shadow: 0px 0px 4px #363636;
+  padding: 4px;
+  padding-left: 0.4rem;
+  font-size: 1.4rem !important;
+  font-weight: bold !important;
+}
+.studentInputText {
+  color: #00db2b !important;
+  color: #ffffff !important;
+  text-shadow: 2px 2px 0px #0b6d00;
+}
+.SResultinputdiv {
+  text-align: center;
+}
+.thestudentlog {
+  border: 0px !important;
+  user-select: none !important;
+  border-bottom: 2px solid white !important;
+  border-radius: 0px !important;
+  text-align: left;
+  // .thestudentlog.obtainedmark {
+  //   border: 0px !important;
+  //   user-select: none !important;
+  //   border-bottom: 2px solid white !important;
+  //   border-radius: 0px !important;
+  //   text-align: right;
+  // }
+}
+
+//============================ Student Panel ================================
+
 //================= dark mood ========================
 .dark-mood {
-  background: rgb(31 29 31)!important;
+  background: rgb(40 42 53) !important;
   color: white !important;
   border-color: rgb(172 172 172) !important;
 }

@@ -23,6 +23,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['AddClassName'])) {
       echo "success insert";
     }
   }
+}else if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['DeletClass'])){
+$DeletClass = test_input($_POST['DeletClass']);
+
+$query = "DELETE FROM `class` WHERE `class`.`ClassID` = $DeletClass";
+if(mysqli_query($link,$query)){
+  echo "Delet Success";
+}
+
 }
 else {
   echo "Post Error";

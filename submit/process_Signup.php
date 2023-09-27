@@ -80,7 +80,6 @@ else {
 
 
 if (isset($_POST['StudentID'])) {
-
   $SID = TestInput($_POST['StudentID']);
   $pass = TestInput($_POST['Password']);
   $name = TestInput($_POST['Name']);
@@ -119,6 +118,8 @@ if (isset($_POST['StudentID'])) {
       echo "<p class=signerror onclick=remove(this)>DataBase Connection Error<span class=xmark><i class='fa-solid fa-xmark'></i></span><p>";
     }
   }
+}else{
+  echo 'error';
 }
 
 

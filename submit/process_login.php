@@ -103,9 +103,11 @@ if (isset($_POST['StudentID'])) {
       $_SESSION['SID'] = $row['StudentID'];
       $_SESSION['Name'] = $row['Name'];
       $_SESSION['Contact'] = $row['Contact'];
+      $_SESSION['Login'] = TRUE;
+      
 
       echo "<p class=signsuccess>
-              Login Success <a href='StudentPanel.html' class='links'>Dashboard</a>
+              Login Success <a href='StudentPanel.php' class='links'>Dashboard</a>
               <span class=xmark onclick=remove(this.parentNode)>
                 <i class='fa-solid fa-xmark'></i>
               </span>
