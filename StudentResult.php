@@ -5,34 +5,41 @@ if (isset($_SESSION['Login'])) {
               window.location.assign("TeacherPanel.php");
           </script>';
   }
-}
-else {
+} else {
   echo '<script>
               window.location.assign("index.php");
           </script>';
-} ?>
+} 
+//==================== Functions ( START ) ===========================
+function GetClassName($ClassID){
+  include 'submit/dbconnect.php';
+  $query = "SELECT `Classname` FROM class WHERE ClassID = '$ClassID'";
+  $row = mysqli_fetch_array(mysqli_query($link,$query));
+  return $row['Classname'];
+} 
+//==================== Functions  ( END )  ===========================
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Dashboard | RMS</title>
   <!--====================== stylesheets ==========================-->
-  <link rel="stylesheet" href="style/CSS/style.css">
+  <link rel="stylesheet" href="style/CSS/style.min.css">
   <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css" rel="stylesheet"> -->
   <!--====================== stylesheets ==========================-->
 </head>
+
 <body>
-
-
   <?php include "nevbar.php"; ?>
-
-
   <?php
 
 
-  function test_input($data) {
+  function test_input($data)
+  {
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
@@ -40,23 +47,6 @@ else {
   }
 
   ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <section class="TeacherClasses dark-theme">
     <h4>Dear
       <?php
@@ -64,33 +54,20 @@ else {
 
       if (isset($_SESSION['Name'])) {
         echo "<a class='links' href='StudentPanel.php'>" . $_SESSION['Name'] . "</a>";
-      }
-      else {
+      } else {
         echo "<a href='logout.php'>Login...</a>";
       } ?>
     </h4>
   </section>
-
-
-
-
-
   <section class="loginsection pb-3 dark-theme">
     <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-lg-12 col-xl-11" style="margin-top:10px;padding-bottom: 10vh;">
-          <!-- <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4 loginname ">Students -> Name</p> -->
-
-
-          <div class="card text-black mt-1 rounded-4">
+      <div class="row d-flex align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="boxshadow rounded">
             <!-- change style -->
-            <div class="card-body p-md-5 rounded-4 dark-theme-light StudentResultform"
-              style="box-shadow: #8fff8fcf 0px 0px 9px inset;border: 2px solid #22eb83 !important;">
-              <div class="row justify-content-center">
+            <div class="card-body p-4 p-md-5 rounded-3 dark-theme-light StudentResultform">
+              <div>
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-
-
-
                   <?php
                   if (isset($_GET['ClassID']) && isset($_SESSION['SID']) && $_SERVER['REQUEST_METHOD'] == 'GET') {
                     $ClassID = test_input($_GET['ClassID']);
@@ -98,15 +75,13 @@ else {
                     ?>
                     <!-- list of subjects  -->
                     <div class="d-flex flex-row align-items-center mb-2">
-                      <i class="fas fa-envelope fa-lg me-3 fa-fw formicon"></i>
-                      <div class="form-outline flex-fill mb-0 SResultinputdiv">
-                        <label class=" form-label h5 fw-bold" for="StudentID">Class Name</label>
-                        <input class="form-control dark-theme" autocomplete="on" type="number" name="StudentID" disabled
-                          value="<?php echo $StudentID ?>" />
+                      <div class="ManageContainer form-outline flex-fill mb-0 SResultinputdiv">
+                       
+                        <a><input class="ManageSubject form-control dark-theme" autocomplete="on" type="text" name="StudentID" disabled
+                          value="<?php echo GetClassName($ClassID); ?>" /></a>
                       </div>
                     </div>
                     <!-- list of subjects  -->
-
                     <?php
                     include 'submit/dbconnect.php';
                     $query = "SELECT `subjects`.`SubjectName`,`studentresult`.`TotalMarks`,`studentresult`.`obtained`,`studentresult`.`SubjectID`,`studentresult`.`ClassID`
@@ -126,16 +101,16 @@ else {
                               <label class=" form-label h5 fw-bold" for="StudentID">
                                 <?php echo $row['SubjectName'] ?>
                               </label>
-                              <div class="dflex">
+                              <div class="dflex" style="border-bottom: 2px solid #007e16 !important;">
                                 <input disabled style="text-align: right;"
-                                  class="form-control studentInputText dark-theme-light thestudentlog obtainedmark studentresultinput"
+                                  class="studentInputText dark-theme-light thestudentlog obtainedmark studentresultinput form-control"
                                   autocomplete="on" type="number" id="SubjectObtained<?php echo $row['SubjectID']; ?>"
                                   name="SubjectObtained<?php echo $row['SubjectID']; ?>"
                                   value="<?php echo $row['obtained']; ?>" />
-
                                 <span class="totalmarks">
                                   <span style="padding-right:5px;">/</span>
-                                  <input disabled class="form-control studentInputText thestudentlog dark-theme-light  totalmark studentresultinput"
+                                  <input disabled
+                                    class="form-control studentInputText thestudentlog dark-theme-light  totalmark studentresultinput"
                                     autocomplete="on" type="number" id="SubjectTotal<?php echo $row['SubjectID']; ?>"
                                     name="SubjectTotal<?php echo $row['SubjectID']; ?>"
                                     value="<?php echo $row['TotalMarks']; ?>" />
@@ -149,8 +124,6 @@ else {
                     }
                   }
                   ?>
-
-
                 </div>
               </div>
             </div>
@@ -159,29 +132,6 @@ else {
       </div>
     </div>
   </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <!--========================== script files ======================================-->
   <script src="Javascript/script.js"></script>
   <script src="submit/submit.js"></script>
@@ -192,7 +142,6 @@ else {
   <!-- font-awesome -->
   <script src="https://kit.fontawesome.com/681a158138.js" crossorigin="anonymous"></script>
   <!--========================== script files ======================================-->
-
   <?php
   //========== Dark Theme on Load ===========
   if (isset($_COOKIE['theme'])) {
@@ -204,6 +153,6 @@ else {
   }
   //========== Dark Theme on Load ===========
   ?>
-
 </body>
+
 </html>

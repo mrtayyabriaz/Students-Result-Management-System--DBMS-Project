@@ -18,7 +18,7 @@ else {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Dashboard | RMS</title>
   <!--====================== stylesheets ==========================-->
-  <link rel="stylesheet" href="style/CSS/style.css">
+  <link rel="stylesheet" href="style/CSS/style.min.css">
   <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css" rel="stylesheet"> -->
   <!--====================== stylesheets ==========================-->
@@ -59,14 +59,14 @@ else {
         echo "<a href='logout.php'>Login...</a>";
       } ?>
     </h4>
-  </section>
+ 
 
 
 
   <div class="container dark-theme-light" style="padding: 2em 0px 2em 0px;border-radius: 10px;">
-    <!-- <h2 class="YourClass">Your Classes</h2> -->
+    
     <div class="Classlist">
-      <ol id="classlist">
+      <ol id="classlist" class="ManageContainer">
 
         <?php
         $StudentID = $_SESSION['SID'];
@@ -80,11 +80,11 @@ else {
         if ($result = mysqli_query($link, $query)) {
           if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_array($result)) {
-              echo '<li class="row rounded" id="TheClass' . $row['ClassID'] . '">
-                        <a href="StudentResult.php?ClassID=' . $row['ClassID'] . '">
-                          <div class="subjectname">' . $row['Classname'] . '</div>
+              echo '
+                        <a id="TheClass' . $row['ClassID'] . '" href="StudentResult.php?ClassID=' . $row['ClassID'] . '">
+                          <div class="ManageSubject">' . $row['Classname'] . '</div>
                         </a>
-                        </li>';
+                    ';
                         // <button class="col-2 btn thebutton edit" type="button"><a href="edit.php?ClassID=' . $row['ClassID'] . '">Edit</a></button>
                         // <button  onclick="DeletClass(' . $row['ClassID'] . ')" class="col-2 btn thebutton delete" type="button">Delete</button>
             }
@@ -101,7 +101,7 @@ else {
 
 
 
-
+  </section>
 
 
 

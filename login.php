@@ -20,7 +20,7 @@ if (isset($_SESSION['Login'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RMS</title>
   <!--====================== stylesheets ==========================-->
-  <link rel="stylesheet" href="style/CSS/style.css">
+  <link rel="stylesheet" href="style/CSS/style.min.css">
   <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css" rel="stylesheet"> -->
   <!--====================== stylesheets ==========================-->

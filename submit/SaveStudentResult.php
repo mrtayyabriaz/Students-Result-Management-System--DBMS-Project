@@ -13,10 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['StudentID'])) {
   $StudentID = test_input($_POST['StudentID']);
   $ClassID = test_input($_POST['ClassID']);
   $TeacherID = $_SESSION['TID'];
-  echo "StudentID:" . $StudentID;
-  echo "ClassID:" . $ClassID;
-  echo "TeacherID:" . $TeacherID . "
-  ";
+  // echo "StudentID:" . $StudentID;
+  // echo "ClassID:" . $ClassID;
+  // echo "TeacherID:" . $TeacherID . "<br>";
 
 
 
@@ -32,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['StudentID'])) {
         $CurrentSubjectID = $row['SubjectID'];
         $CurrentClassID = $row['ClassID'];
         $CurrentResultNo = $row['No'];
-        echo $CurrentResultNo;
+        // echo $CurrentResultNo;
 
         $POSTSubjectObtained = 'SubjectObtained' . $CurrentSubjectID;
         $POSTSubjectObtained = $_POST[$POSTSubjectObtained];
@@ -45,10 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['StudentID'])) {
 
 
 
-        echo "POSTSubjectObtained: " . $POSTSubjectObtained . "
-        ";
-        echo "POSTSubjectTotal: " . $POSTSubjectTotal . "
-        ";
+        // echo "POSTSubjectObtained: " . $POSTSubjectObtained . "<br>";
+        // echo "POSTSubjectTotal: " . $POSTSubjectTotal . "<br>";
 
 $query = "UPDATE `studentresult`
  SET `No`='[value-1]',`TotalMarks`='[value-2]',`Obtained`='[value-3]',`StudentID`='[value-4]',`SubjectID`='[value-5]',`ClassID`='[value-6]',`DateInsert`='[value-7]'
@@ -58,11 +55,10 @@ $query = "UPDATE `studentresult`
                 WHERE ClassID = '$ClassID' && StudentID = '$StudentID' && SubjectID = '$CurrentSubjectID';";
               // WHERE `No` = '$CurrentResultNo'";
         if (mysqli_query($link, $query)) {
-          echo "Success Update
-          ";
+          echo "Saved success";
         }
       }
     }
   }
-  echo "OK";
+  // echo "OK";
 }

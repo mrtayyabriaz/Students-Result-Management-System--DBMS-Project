@@ -2,7 +2,7 @@
 $localhost = "localhost";
 $username = "root";
 $password = "";
-$database = "rms";
+$database = "student_rms";
 
 $link = mysqli_connect($localhost, $username, $password, $database);
 if ($link->connect_errno) {

@@ -60,6 +60,10 @@ function ChangeTheme(thetheme) {
     for (let i = 0; i < nevlinkdarkmood.length; i++) {
       nevlinkdarkmood[i].classList.toggle("dark-mood-light");
     }
+    // ========== logo =========
+    document.getElementById("main-logo").classList.toggle("inverted");
+    // ========== logo =========
+
     // ========== nevbar =========
 
     //=========== icon ===========

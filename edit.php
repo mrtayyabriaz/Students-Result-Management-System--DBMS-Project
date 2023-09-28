@@ -14,7 +14,7 @@ function test_input($data) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RMS</title>
   <!--====================== stylesheets ==========================-->
-  <link rel="stylesheet" href="style/CSS/style.css">
+  <link rel="stylesheet" href="style/CSS/style.min.css">
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
   <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css" rel="stylesheet"> -->
@@ -65,14 +65,14 @@ function test_input($data) {
 
 
 
-    <section class="loginsection pb-3 dark-theme" style="background:white;">
+    <section class="loginsection pb-3 dark-theme">
       <div class="container-fluid h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-lg-12 col-xl-11" style="margin-top:10px;padding-bottom: 10vh;">
 
-            <div class="card text-black mt-1 rounded-4" style="background:#d9d9d9bd;">
+            <div class="card text-black border-0 boxshadow" style="background:#ffff;">
               <!-- change style -->
-              <div class="card-body p-md-5 rounded-4 dark-theme-light">
+              <div class="card-body p-md-5 rounded dark-theme-light">
                 <div class="row justify-content-center">
                   <div class="col-md-10 col-xl-8 order-2 order-lg-1">
 

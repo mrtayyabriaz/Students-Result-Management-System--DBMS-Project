@@ -13,7 +13,7 @@ if (isset($_SESSION['Login'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Student Records | RMS</title>
   <!--====================== stylesheets ==========================-->
-  <link rel="stylesheet" href="style/CSS/style.css">
+  <link rel="stylesheet" href="style/CSS/style.min.css">
   <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css" rel="stylesheet"> -->
   <!--====================== stylesheets ==========================-->
@@ -105,15 +105,15 @@ if (isset($_SESSION['Login'])) {
 
 
 
-          <div class="card text-black mt-1 rounded-4">
+          <div class="card boxshadow rounded-4" style="border: 0px;">
             <!-- change style -->
-            <div class="card-body p-md-5 rounded-4 dark-theme-light" style="box-shadow: #8fff8fcf 0px 0px 9px inset;border: 2px solid #22eb83 !important;">
+            <div class="card-body p-md-5 rounded-3 dark-theme-light">
               <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
 
-                  <div class="dflex">
-                    <div id="StudentResultStatus" style="width:100%"></div>
+                  <div class="dflex bg-success text-white rounded p-2 my-2" style="display:none">
+                    <div id="SaveResultStatus" style="width:100%"></div>
                   </div>
 
                   <form class="mx-1 mx-md-4" method="POST" id="SaveStudentResult">
@@ -133,7 +133,7 @@ if (isset($_SESSION['Login'])) {
                             name="StudentID" value="<?php echo $StudentID ?>" autofocus="autofocus" />
                           <input class="form-control dark-theme" style="display:none" autocomplete="on" type="number" 
                             name="ClassID" value="<?php echo $ClassID ?>" autofocus="autofocus" />
-                          <input class="form-control dark-theme" type="number" 
+                          <input class="form-control dark-theme border-0" type="number" 
                             disabled value="<?php echo $StudentID ?>" />
                         </div>
                       </div>
@@ -158,12 +158,12 @@ if (isset($_SESSION['Login'])) {
                                   <?php echo $row['SubjectName'] ?>
                                 </label>
                                 <div class="dflex">
-                                  <input style="text-align:right;width:69%" class="form-control dark-theme studentresultinput" autocomplete="on" type="number"
+                                  <input style="text-align:right;width:69%" class="form-control border-0 dark-theme studentresultinput" autocomplete="on" type="number"
                                     id="SubjectObtained<?php echo $row['SubjectID']; ?>" name="SubjectObtained<?php echo $row['SubjectID']; ?>" value="<?php echo $row['obtained']; ?>"
                                     autofocus="autofocus" />
                                   <span class="totalmarksTeacher">
                                     <span style="padding-right:5px;">/</span>
-                                  <input style="padding-left: 21px;" class="form-control dark-theme studentresultinput" autocomplete="on" type="number"
+                                  <input style="padding-left: 21px;" class="form-control border-0 dark-theme studentresultinput" autocomplete="on" type="number"
                                     id="SubjectTotal<?php echo $row['SubjectID']; ?>" name="SubjectTotal<?php echo $row['SubjectID']; ?>" value="<?php echo $row['TotalMarks']; ?>"
                                     autofocus="autofocus" />
                                     

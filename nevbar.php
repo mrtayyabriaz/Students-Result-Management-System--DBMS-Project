@@ -2,9 +2,11 @@
   <div class="container-fluid">
     <div>
       <a class="navbar-brand" href="index.php">
-        <img src="images/UNIVERSITY_OF_OKARA.JPG" alt="Bootstrap" width="30" height="24">
+        <img src="images/RMS_logo_transarent.png" class="main-logo inverted" id="main-logo" alt="Logo" width="30" height="24">
+        <!-- <img src="images/RMS logo.jpg" alt="Logo" width="30" height="24"> -->
+        <!-- <img src="images/UNIVERSITY_OF_OKARA.JPG" alt="Bootstrap" width="30" height="24"> -->
       </a>
-      <a class="navbar-brand" href="index.php">Result MS</a>
+      <a class="navbar-brand" href="index.php"></a>
     </div>
     <div class="dflex">
       <div type="button" class="px-3" onclick="ChangeTheme('toogle')">
@@ -30,7 +32,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
   </div>
-    <div class="collapse navbar-collapse ms-2" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse ms-2" id="navbarSupportedContent" style="transition: all 0.3s ease 0s;">
       <ul
         class="dark-theme-light navbar-nav d-flex align-items-center me-auto w-100 mt-2 mt-lg-0 mb-lg-0 nav-pills nav-fill gap-2 p-1 small rounded-5 shadow-sm"
         id="pillNav2" role="tablist"

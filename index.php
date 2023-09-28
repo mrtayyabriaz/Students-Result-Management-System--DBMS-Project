@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RMS</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <!--====================== stylesheets ==========================-->
-  <link rel="stylesheet" href="style/CSS/style.css">
+  <link rel="stylesheet" href="style/CSS/style.min.css">
   <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!--====================== stylesheets ==========================-->
 </head>
@@ -16,7 +17,7 @@
 
 
   <section class="dark-theme">
-    <div class="container mycontainer dark-theme-light">
+    <div class="container mycontainer boxshadow dark-theme-light">
       <div class="row w-100 fw-bold fs-4 select_status">Select your status</div>
       <div class="row selectioncontainer ">
         <!-- <a href="login.html" class="col-5 student">Student</a> -->
@@ -29,7 +30,7 @@
 
 
   <section class="dark-theme">
-    <div class="container mycontainer dark-theme-light">
+    <div class="container mycontainer boxshadow dark-theme-light">
       <div class="row w-100 fw-bold fs-4 select_status">See Desktop Application Project</div>
       <div class="row DownloadProject">
         <div class="col-2" style="width: max-content;">

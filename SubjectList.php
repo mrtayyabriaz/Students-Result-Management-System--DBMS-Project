@@ -17,7 +17,7 @@ session_start();
   <!--======================= favicon =========================-->
 
   <!--====================== stylesheets ==========================-->
-  <link rel="stylesheet" href="style/CSS/style.css">
+  <link rel="stylesheet" href="style/CSS/style.min.css">
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
   <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css" rel="stylesheet"> -->
@@ -76,7 +76,7 @@ session_start();
 
 
       <!--===================== add subject to class start =========================-->
-      <div class="container">
+      <div class="container dark-theme-light">
         <div class="Classlist">
           <ol id="SubjectList">
             <?php
@@ -192,7 +192,7 @@ session_start();
 
     <!--========================= Class Adding  status ================= -->
     <section class="TeacherClasses">
-      <div class="container">
+      <div class="container dark-theme-light">
 
 
         <div class="dflex">
@@ -225,7 +225,6 @@ session_start();
 
         <!--=================== add subject to class form ==============-->
         <form method="post" id="AddSubjectToClassForm" style="display: none;">
-          <!-- <label for="AddSubjectToClassID" class="pe-2">Subject Name</label> -->
           <div class="input-group justify-input">
             <select id="AddSubjectToClassID" name="AddSubjectToClassID"
               class="form-select w-50 AddClassInput dark-theme" aria-label="Default select example">
@@ -344,7 +343,7 @@ session_start();
 
 
 
-      <div class="container">
+      <div class="container dark-theme-light">
 
         <!--================== Students Name end ================-->
 
@@ -405,7 +404,7 @@ session_start();
 
     <!--========================= Student Adding  status ================= -->
     <section class="TeacherClasses">
-      <div class="container">
+      <div class="container dark-theme-light">
 
 
         <div class="dflex">

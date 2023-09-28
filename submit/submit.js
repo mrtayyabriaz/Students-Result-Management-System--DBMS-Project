@@ -455,17 +455,17 @@ function SaveStudentResult() {
     if (this.readyState == 4 && this.status == 200) {
       console.log(this.response);
 
-      if (this.response == "query insert") {
-        document.getElementById("FormStatus").style.display = "block";
-        document.getElementById("FormStatus").firstElementChild.innerHTML =
-          "query success";
+      if (this.response == "Saved success") {
+        document.getElementById("SaveResultStatus").parentElement.style.display = "block";
+        document.getElementById("SaveResultStatus").innerHTML =
+          "Marks Saved successfully";
       } else if (this.response == "Unknown Error") {
-        document.getElementById("FormStatus").style.display = "block";
-        document.getElementById("FormStatus").firstElementChild.innerHTML =
+        document.getElementById("SaveResultStatus").style.display = "block";
+        document.getElementById("SaveResultStatus").innerHTML =
           "Unknown Error";
       } else {
-        // document.getElementById("FormStatus").style.display = "block";
-        // document.getElementById("FormStatus").firstElementChild.innerHTML =
+        // document.getElementById("SaveResultStatus").style.display = "block";
+        // document.getElementById("SaveResultStatus").firstElementChild.innerHTML =
         //   "Unknown Error";
       }
     }
