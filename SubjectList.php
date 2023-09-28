@@ -3,11 +3,11 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RMS</title>
-  
   <!--======================= favicon =========================-->
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
@@ -15,7 +15,6 @@ session_start();
   <link rel="manifest" href="images/favicon_io/site.webmanifest">
   <link rel="shortcut icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
   <!--======================= favicon =========================-->
-
   <!--====================== stylesheets ==========================-->
   <link rel="stylesheet" href="style/CSS/style.min.css">
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
@@ -23,22 +22,9 @@ session_start();
   <!-- <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css" rel="stylesheet"> -->
   <!--====================== stylesheets ==========================-->
 </head>
+
 <body class="dark-theme">
-
   <?php include 'nevbar.php'; ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
   <section class="SubjectContainerBorder">
     <!--======================= Teacher Name Start ===================-->
     <section class="TeacherClasses">
@@ -61,20 +47,14 @@ session_start();
                 }
               }
             }
-          }
-          else {
+          } else {
             echo "All Subjects";
           }
-        }
-        else {
+        } else {
           echo "<a href='logout.php'>Login...</a>";
         } ?>
       </h4>
       <!--======================= Teacher Name End===================-->
-
-
-
-
       <!--===================== add subject to class start =========================-->
       <div class="container dark-theme-light">
         <div class="Classlist">
@@ -82,7 +62,8 @@ session_start();
             <?php
             if (isset($_GET['ClassID'])) {
               $TeacherID = $_SESSION['TID'];
-              function test_input($data) {
+              function test_input($data)
+              {
                 $data = trim($data);
                 $data = stripslashes($data);
                 $data = htmlspecialchars($data);
@@ -105,8 +86,10 @@ session_start();
                           ?>
                           <li class="row" id="TheSubject<?php echo $namerow['SubjectID']; ?>">
                             <a href="#" class="col-8">
-                              <div class=" subjectname">
-                                <?php echo $namerow['SubjectName']; ?>
+                              <div class="ObjectBackground">
+                                <div class=" subjectname">
+                                  <?php echo $namerow['SubjectName']; ?>
+                                </div>
                               </div>
                             </a>
                             <button class="col-2 btn thebutton edit" type="button">
@@ -120,16 +103,14 @@ session_start();
                     }
                     //========= getting name from subject ID end ============
                   }
-                }
-                else {
+                } else {
                   echo "<em>No Subject Added.</em>";
                 }
               }
               //=============== get class subjects end ============
             
 
-            }
-            else {
+            } else {
 
 
 
@@ -150,11 +131,11 @@ session_start();
               //====================== ADD over all subjects start ========================
               if (isset($_SESSION['TID'])) {
                 $TeacherID = $_SESSION['TID'];
-              }
-              else {
+              } else {
                 $TeacherID = "Login...";
               }
-              function test_input($data) {
+              function test_input($data)
+              {
                 $data = trim($data);
                 $data = stripslashes($data);
                 $data = htmlspecialchars($data);
@@ -168,14 +149,15 @@ session_start();
                     // echo "<a href='#'><li>" . $row['SubjectName'] . "</li></a>";
                     echo '<li class="row" id="TheSubject' . $row['SubjectID'] . '">
                   <a href="#" class="col-8">
+                  <div class="ObjectBackground">
                   <div class=" subjectname">' . $row['SubjectName'] . '</div>
+                  </div>
                   </a>
                   <button class="col-2 btn thebutton edit" type="button"><a href="edit.php?SubjectID=' . $row['SubjectID'] . '">Edit</a></button>
                   <button onclick="DeletSubject(' . $row['SubjectID'] . ')" class="col-2 btn thebutton delete" type="button">Delete</button>
                   </li>';
                   }
-                }
-                else {
+                } else {
                   echo "No Subject added";
                 }
               }
@@ -187,28 +169,18 @@ session_start();
       </div>
     </section>
     <!--===================== add subject to class end =========================-->
-
-
-
     <!--========================= Class Adding  status ================= -->
     <section class="TeacherClasses">
       <div class="container dark-theme-light">
-
-
         <div class="dflex">
           <div id="AddSubjectStatus" style="width:100%;display:none;">
-            <p class=signsuccess>
-              Subject Added Successfully
-              <span class=xmark onclick=hide(this.parentNode.parentNode)>
+            <p class=signsuccess> Subject Added Successfully <span class=xmark onclick=hide(this.parentNode.parentNode)>
                 <i class='fa-solid fa-xmark'></i>
               </span>
             <p>
           </div>
         </div>
         <!--========================= Class Adding  status ================= -->
-
-
-
         <!--=============== add subject form =========== -->
         <form method="post" id="AddSubjectForm" style="display: none;">
           <!-- <label for="AddSubjectName" class="pe-2">Subject Name</label> -->
@@ -222,7 +194,6 @@ session_start();
           </div>
         </form>
         <!--=============== add subject form =========== -->
-
         <!--=================== add subject to class form ==============-->
         <form method="post" id="AddSubjectToClassForm" style="display: none;">
           <div class="input-group justify-input">
@@ -235,8 +206,7 @@ session_start();
                   while ($row = mysqli_fetch_array($result)) {
                     echo "<option value='" . $row['SubjectID'] . "'>" . $row['SubjectName'] . "</option>";
                   }
-                }
-                else {
+                } else {
                   echo "No Class added";
                 }
               } ?>
@@ -249,16 +219,9 @@ session_start();
           </div>
         </form>
         <!--=================== add subject to class form ==============-->
-
-
       </div>
     </section>
-
     <!--===================== Add Class ================= -->
-
-
-
-
     <!--===================== show form ================= -->
     <?php
     if (isset($_GET['ClassID'])) {
@@ -266,8 +229,7 @@ session_start();
         let AddSubjectToClassForm = document.getElementById("AddSubjectToClassForm");
                 AddSubjectToClassForm.style.display = "block";
               </script>';
-    }
-    else {
+    } else {
       echo '<script>
     let AddSubjectForm = document.getElementById("AddSubjectForm");
     AddSubjectForm.style.display = "block";
@@ -275,42 +237,11 @@ session_start();
     } ?>
     <!--===================== show form ================= -->
   </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <!--===============================================================================================
   ===================================== Student start ===============================================
   ================================================================================================-->
-
   <section class="StudentContainerBorder" id="StudentContainerBorder">
     <section class="TeacherClasses">
-
-
       <h4>Teacher
         <?php
         include 'submit/dbconnect.php';
@@ -330,28 +261,18 @@ session_start();
                 }
               }
             }
-          }
-          else {
+          } else {
             echo "All Students";
           }
-        }
-        else {
+        } else {
           echo "<a href='logout.php'>Login...</a>";
         } ?>
       </h4>
-
-
-
-
       <div class="container dark-theme-light">
-
         <!--================== Students Name end ================-->
-
-
         <!--===================== add Student to class start =========================-->
         <div class="Classlist">
           <ol id="StudentList">
-
             <?php
             include 'submit/dbconnect.php';
             $query = "SELECT `student_login`.`Name`, `studentcombination`.`StudentID`
@@ -367,8 +288,10 @@ session_start();
                   <li class="row" id="TheStudent<?php echo $row['StudentID']; ?>">
                     <a href="<?php echo "StudentData.php?StudentID=" . $row['StudentID'] . "&ClassID=" . $ClassID ?>"
                       class="col-8">
-                      <div class="subjectname">
-                        <?php echo $row['Name']; ?>
+                      <div class="ObjectBackground">
+                        <div class="subjectname">
+                          <?php echo $row['Name']; ?>
+                        </div>
                       </div>
                     </a>
                     <button class="col-2 btn thebutton edit" type="button"><a
@@ -379,8 +302,7 @@ session_start();
                   <?php
                   //====== show each student =======
                 }
-              }
-              else {
+              } else {
                 echo "No Students added";
               }
             }
@@ -391,42 +313,18 @@ session_start();
       </div>
     </section>
     <!--=========================== Show Students end ========================-->
-
-
-
-
-
-
-
-
-
-
-
     <!--========================= Student Adding  status ================= -->
     <section class="TeacherClasses">
       <div class="container dark-theme-light">
-
-
         <div class="dflex">
           <div id="AddStudentStatus" style="width:100%;display:none;">
-            <p class=signsuccess>
-              Student Added Successfully
-              <span class=xmark onclick=hide(this.parentNode.parentNode)>
+            <p class=signsuccess> Student Added Successfully <span class=xmark onclick=hide(this.parentNode.parentNode)>
                 <i class='fa-solid fa-xmark'></i>
               </span>
             <p>
           </div>
         </div>
         <!--========================= Student Adding  status ================= -->
-
-
-
-
-
-
-
-
-
         <!--=================== add Student to class form ==============-->
         <form method="post" id="AddStudentToClassForm">
           <!-- <label for="AddStudentToClassID" class="pe-2">Student Name</label> -->
@@ -440,8 +338,7 @@ session_start();
                   while ($row = mysqli_fetch_array($result)) {
                     echo "<option value='" . $row['StudentID'] . "'>" . $row['Name'] . "</option>";
                   }
-                }
-                else {
+                } else {
                   echo "No Class added";
                 }
               } ?>
@@ -454,12 +351,9 @@ session_start();
           </div>
         </form>
         <!--=================== add Student to class form ==============-->
-
       </div>
     </section>
   </section>
-
-
   <!--========================= script to hide or show section ======================== -->
   <?php
   if (isset($_GET['ClassID'])) {
@@ -467,35 +361,17 @@ session_start();
         let StudentContainerBorder = document.getElementById("StudentContainerBorder");
         StudentContainerBorder.style.display = "block"; 
               </script>';
-  }
-  else {
+  } else {
     echo '<script>
     let StudentContainerBorder = document.getElementById("StudentContainerBorder");
     StudentContainerBorder.style.display = "none";
     </script>';
   } ?>
   <!--========================= script to hide or show section ======================== -->
-
   <!-- INSERT INTO `studentresult` (`No`, `TotalMarks`, `Obtained`, `StudentID`, `SubjectID`, `ClassID`) VALUES ('1', '100', '85', '1111', '30', '64'); -->
   <!--===============================================================================================
 ===================================== Students End ================================================
 ================================================================================================-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <!--========================== script files ======================================-->
   <script src="Javascript/script.js"></script>
   <script src="submit/submit.js"></script>
@@ -506,7 +382,6 @@ session_start();
   <!-- font-awesome -->
   <!-- <script src="https://kit.fontawesome.com/681a158138.js" crossorigin="anonymous"></script> -->
   <!--========================== script files ======================================-->
-
   <?php
   //========== Dark Theme on Load ===========
   if (isset($_COOKIE['theme'])) {
@@ -518,6 +393,6 @@ session_start();
   }
   //========== Dark Theme on Load ===========
   ?>
-
 </body>
+
 </html>

@@ -75,7 +75,9 @@ session_start();
                   // echo "<a href='SubjectList.php?ClassID=" . $row['ClassID'] . "'><li >" . $row['Classname'] . "</li></a>";
                   echo '<li class="row" id="TheClass' . $row['ClassID'] . '">
                         <a class="col-8 " href="SubjectList.php?ClassID=' . $row['ClassID'] . '">
+                        <div class="ObjectBackground">
                           <div class="subjectname">' . $row['Classname'] . '</div>
+                          </div>
                         </a>
                         <button class="col-2 btn thebutton edit" type="button"><a href="edit.php?ClassID=' . $row['ClassID'] . '">Edit</a></button>
                         <button  onclick="DeletClass(' . $row['ClassID'] . ')" class="col-2 btn thebutton delete" type="button">Delete</button>

@@ -23,9 +23,11 @@ body {
   background-color: #F0F2F5 !important;
   // background-color: var(--body-color);
 }
-.main-logo.inverted{
+
+.main-logo.inverted {
   filter: invert(1);
 }
+
 .dflex {
   @include dflex;
 }
@@ -74,6 +76,11 @@ body {
   a {
     padding-left: 2px;
   }
+}
+
+.ObjectBackground {
+  background: #9bf3ffe6;
+  border-radius: 5px 0px 0px 5px;
 }
 
 .justify-input {
@@ -329,9 +336,11 @@ body {
     }
   }
 }
+
 .AddClassInput {
-  border: 1px solid #1c04e8db !important; 
+  border: 1px solid #1c04e8db !important;
 }
+
 #AddClassForm {
   @include dflex;
   justify-content: flex-start;
@@ -413,10 +422,10 @@ body {
       border: 2px solid #d1310d;
       border-radius: 0px 4px 4px 0px;
       font-weight: bold;
-      
+
       &:hover {
         background: #d1310d;
-          color: white !important;
+        color: white !important;
       }
     }
   }

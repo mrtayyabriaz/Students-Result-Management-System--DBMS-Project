@@ -112,7 +112,7 @@ if (isset($_SESSION['Login'])) {
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
 
-                  <div class="dflex bg-success text-white rounded p-2 my-2" style="display:none">
+                  <div class="dflex signsuccess my-2" style="display:none">
                     <div id="SaveResultStatus" style="width:100%"></div>
                   </div>
 

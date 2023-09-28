@@ -55,10 +55,15 @@ $query = "UPDATE `studentresult`
                 WHERE ClassID = '$ClassID' && StudentID = '$StudentID' && SubjectID = '$CurrentSubjectID';";
               // WHERE `No` = '$CurrentResultNo'";
         if (mysqli_query($link, $query)) {
-          echo "Saved success";
+          $error = false;
+        }else{
+          $error = true;
         }
       }
     }
   }
   // echo "OK";
+  if(!$error){
+    echo "Saved success";
+  }
 }

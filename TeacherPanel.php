@@ -44,7 +44,9 @@ if (isset($_SESSION['Login'])) {
       <!--====== Manage calsses ======= -->
       <div class="ManageContainer">
         <a href='ClassList.php'>
-          <div class="ManageSubject">All Classes</div>
+          <div class="ObjectBackground">
+            <div class="ManageSubject">All Classes</div>
+          </div>
         </a>
       </div>
       <!--====== Manage calsses ======= -->
@@ -53,7 +55,9 @@ if (isset($_SESSION['Login'])) {
       <!--====== Manage Subject ======= -->
       <div class="ManageContainer">
         <a href='SubjectList.php'>
+        <div class="ObjectBackground">
           <div class="ManageSubject">All Subjects</div>
+        </div>
         </a>
       </div>
       <!--====== Manage Subject ======= -->
