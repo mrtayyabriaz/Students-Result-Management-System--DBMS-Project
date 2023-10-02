@@ -79,8 +79,15 @@ body {
 }
 
 .ObjectBackground {
-  background: #9bf3ffe6;
+  // background: #9bf3ffe6;
+  background: white;
   border-radius: 5px 0px 0px 5px;
+}
+.ObjectBackgroundDark {
+  background: black !important;
+  .subjectname{
+    border-width: 0px !important;
+  }
 }
 
 .justify-input {

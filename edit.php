@@ -145,7 +145,7 @@ function test_input($data) {
                               <div class="d-flex flex-row align-items-center mb-4">
                                 <i class="fas fa-envelope fa-lg me-3 fa-fw formicon"></i>
                               <div class="form-outline flex-fill">
-                              <label class=" form-label h5 fw-bold" for="TeacherID">Edit Subject Name</label>';
+                              <label class="form-label h5 fw-bold" style="min-width: max-content;" for="TeacherID">Edit Subject Name</label>';
                         echo '<input class="form-control dark-theme" autocomplete="on" type="text" id="SubjectName" value="' . $SubjectName . '" name="SubjectName" autofocus="autofocus" />';
                         echo '<input type="hidden" name="SubjectID" value="' . $SubjectID . '">';
                         echo '

@@ -1,3 +1,6 @@
+<?php
+$a = 0;
+?>
 <nav class="navbar navbar-light navbar-expand-lg" id="nev-dark-mood">
   <div class="container-fluid">
     <div>

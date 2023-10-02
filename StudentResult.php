@@ -77,7 +77,7 @@ function GetClassName($ClassID){
                     <div class="d-flex flex-row align-items-center mb-2">
                       <div class="ManageContainer form-outline flex-fill mb-0 SResultinputdiv">
                        
-                        <a><input class="ManageSubject form-control dark-theme" autocomplete="on" type="text" name="StudentID" disabled
+                        <a><input class="ManageSubject form-control" autocomplete="on" type="text" name="StudentID" disabled
                           value="<?php echo GetClassName($ClassID); ?>" /></a>
                       </div>
                     </div>

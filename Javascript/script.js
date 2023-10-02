@@ -31,8 +31,8 @@ function hide(elem) {
 //================= dark mood ==================
 function ChangeTheme(thetheme) {
   if (thetheme == "Dark" || thetheme == "toogle") {
-    const darkmood = document.getElementsByClassName("dark-theme");
 
+    const darkmood = document.getElementsByClassName("dark-theme");
     for (let i = 0; i < darkmood.length; i++) {
       darkmood[i].classList.toggle("dark-mood");
     }
@@ -41,6 +41,12 @@ function ChangeTheme(thetheme) {
     for (let i = 0; i < darkmoodlight.length; i++) {
       darkmoodlight[i].classList.toggle("dark-mood-light");
     }
+
+    const ObjectBackgroundDark = document.getElementsByClassName("ObjectBackground");
+    for (let i = 0; i < ObjectBackgroundDark.length; i++) {
+      ObjectBackgroundDark[i].classList.toggle("ObjectBackgroundDark");
+    }
+
     // ========== nevbar =========
     const nev = document.getElementById("nev-dark-mood");
     nev.classList.toggle("dark-mood-light");
