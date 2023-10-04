@@ -136,7 +136,7 @@
                     </div>
 
                     <div style="text-align: center;width:100%">
-                      <?php echo '<div>Do not have an account? <a href="Login.php?status=' . $status . '" class="links">
+                      <?php echo '<div>Do not have an account? <a href="login.php?status=' . $status . '" class="links">
                       Login here</a></div>'; ?>
 
                     </div>

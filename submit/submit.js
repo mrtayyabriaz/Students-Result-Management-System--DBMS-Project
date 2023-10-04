@@ -40,7 +40,7 @@ function login() {
   xhr.onreadystatechange = function () {
     //======== on status ready
     if (this.readyState == 4 && this.status == 200) {
-      // console.log(this.response);
+      console.log(this.response);
       document.getElementById("login_status").innerHTML = this.response;
       result = this.response;
       result = result.substring(0, 21);
@@ -78,7 +78,7 @@ function AddClassfun() {
   xhr.onreadystatechange = function () {
     //======== on status ready
     if (this.readyState == 4 && this.status == 200) {
-      // console.log(this.response);
+      console.log(this.response);
       if (this.response == "success insert") {
         document.getElementById("AddClassStatus").style.display = "block";
 
