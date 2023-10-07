@@ -112,9 +112,10 @@ if (isset($_SESSION['Login'])) {
                             name="ClassID" value="<?php echo $ClassID ?>" autofocus="autofocus" />
                           <div class="ManageContainer">
                             <a>
-                              <div class="ObjectBackground">
+                              <div class="ObjectBackground" style="border-radius: 6px;">
                           <div class="ManageSubject">
                                 <div class=" subjectname">
+                                <i class="fas fa-user fa-lg fa-fw" style="-webkit-text-fill-color: #19bd68;"></i>
                                   <?php echo $StudentName; ?>
                                 </div>
                               </div>
@@ -137,24 +138,25 @@ if (isset($_SESSION['Login'])) {
                           while ($row = mysqli_fetch_array($result)) {
                             ?>
                             <div class="d-flex flex-row align-items-center  StudentDiv">
-                              <i class="fas fa-envelope fa-lg me-3 fa-fw formicon"></i>
                               <div class="form-outline flex-fill mb-0">
                                 <label class="w-100 text-center form-label h5 fw-bold" for="StudentID">
+                                  
                                   <?php echo $row['SubjectName'] ?>
                                 </label>
                                 <div class="dflex">
+                                  <i class="fas fa-book h3 me-2 fa-fw formicon" style="-webkit-text-fill-color: #ad40ff;"></i>
                                   <input style="text-align:right;width:69%"
-                                    class="form-control border-0 dark-theme studentresultinput" autocomplete="on" type="number"
+                                    class="form-control border-0 dark-theme studentresultinput" type="number"
                                     id="SubjectObtained<?php echo $row['SubjectID']; ?>"
                                     name="SubjectObtained<?php echo $row['SubjectID']; ?>"
-                                    value="<?php echo $row['obtained']; ?>" autofocus="autofocus" />
+                                    value="<?php echo $row['obtained']; ?>" />
                                   <span class="totalmarksTeacher">
                                     <span style="padding-right:5px;">/</span>
                                     <input style="padding-left: 21px;"
-                                      class="form-control border-0 dark-theme studentresultinput" autocomplete="on"
+                                      class="form-control border-0 dark-theme studentresultinput" 
                                       type="number" id="SubjectTotal<?php echo $row['SubjectID']; ?>"
                                       name="SubjectTotal<?php echo $row['SubjectID']; ?>"
-                                      value="<?php echo $row['TotalMarks']; ?>" autofocus="autofocus" />
+                                      value="<?php echo $row['TotalMarks']; ?>" />
                                   </span>
                                 </div>
                               </div>

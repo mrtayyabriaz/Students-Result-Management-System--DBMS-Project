@@ -76,7 +76,10 @@ session_start();
                   echo '<li class="row" id="TheClass' . $row['ClassID'] . '">
                         <a class="col-8 " href="SubjectList.php?ClassID=' . $row['ClassID'] . '">
                         <div class="ObjectBackground">
-                          <div class="subjectname">' . $row['Classname'] . '</div>
+                          <div class="subjectname">
+                          <i class="fa-solid fa-house-chimney-user" style="-webkit-text-fill-color: #5093ff;"></i>
+                            ' . $row['Classname'] . '
+                          </div>
                           </div>
                         </a>
                         <button class="col-2 btn thebutton edit" type="button"><a href="edit.php?ClassID=' . $row['ClassID'] . '">Edit</a></button>

@@ -45,7 +45,11 @@ if (isset($_SESSION['Login'])) {
       <div class="ManageContainer">
         <a href='ClassList.php'>
           <div class="ObjectBackground">
-            <div class="ManageSubject">All Classes</div>
+            
+            <div class="ManageSubject">
+              <i class="fa-solid fa-house-chimney-user h3 m-0" style="padding: 0px 6px;-webkit-text-fill-color: #5093ff;"></i>
+             All Classes
+            </div>
           </div>
         </a>
       </div>
@@ -56,7 +60,10 @@ if (isset($_SESSION['Login'])) {
       <div class="ManageContainer">
         <a href='SubjectList.php'>
         <div class="ObjectBackground">
-          <div class="ManageSubject">All Subjects</div>
+          <div class="ManageSubject">
+          <i class="fas fa-book fa-fw h3 m-0" style="margin: 0px 5px !important;-webkit-text-fill-color: #ad40ff;" aria-hidden="true"></i>
+            All Subjects
+          </div>
         </div>
         </a>
       </div>

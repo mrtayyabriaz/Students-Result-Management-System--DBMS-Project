@@ -48,7 +48,7 @@ function login() {
         console.log(result);
         setTimeout(() => {
           window.location.assign("TeacherPanel.php");
-        }, 2500);
+        }, 1500);
       }
     }
   };
@@ -104,7 +104,7 @@ function AddClassfun() {
         //===== set time to refrech =====
         setTimeout(() => {
           window.location.reload();
-        }, 3000);
+        }, 1500);
         //===== set time to refrech =====
       }
     }
@@ -183,7 +183,7 @@ function AddSubjectfun() {
         //===== set time to refrech =====
         setTimeout(() => {
           window.location.reload();
-        }, 3000);
+        }, 1500);
         //===== set time to refrech =====
       } else {
         document.getElementById("AddSubjectStatus").style.display = "block";
@@ -239,7 +239,7 @@ function AddSubjectToClassfun() {
         //===== set time to refrech =====
         setTimeout(() => {
           window.location.reload();
-        }, 3000);
+        }, 1500);
         //===== set time to refrech =====
       } else if (this.response == "Already Added") {
         document.getElementById("AddSubjectStatus").style.display = "block";
@@ -354,7 +354,7 @@ function AddStudentToClassfun() {
         //===== set time to refresh ======
         setTimeout(() => {
           window.location.reload();
-        }, 3000);
+        }, 1500);
         //===== set time to refresh ======
       } else if (this.response == "Student Already Added") {
         document.getElementById("AddStudentStatus").style.display = "block";

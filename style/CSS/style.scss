@@ -367,7 +367,7 @@ body {
 #classlist,
 #StudentList,
 #SubjectList {
-  width: 94%;
+  width: 100%;
 
   li {
     font-size: 1.6rem;
@@ -459,6 +459,7 @@ body {
       // justify-content: center;
       font-size: 1.7em;
       display: flex;
+      align-items: center;
     }
   }
 }

@@ -20,6 +20,8 @@ session_start();
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
   <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css" rel="stylesheet"> -->
+  <!-- font-awesome -->
+  <script src="https://kit.fontawesome.com/681a158138.js" crossorigin="anonymous"></script>
   <!--====================== stylesheets ==========================-->
 </head>
 
@@ -58,7 +60,7 @@ session_start();
       <!--===================== add subject to class start =========================-->
       <div class="container dark-theme-light">
         <div class="Classlist">
-          <ol id="SubjectList">
+          <ol id="SubjectList" class="px-3">
             <?php
             if (isset($_GET['ClassID'])) {
               $TeacherID = $_SESSION['TID'];
@@ -88,6 +90,7 @@ session_start();
                             <a href="#" class="col-8">
                               <div class="ObjectBackground">
                                 <div class=" subjectname">
+                                  <i class="fas fa-book fa-lg fa-fw" style="-webkit-text-fill-color: #ad40ff;"></i>
                                   <?php echo $namerow['SubjectName']; ?>
                                 </div>
                               </div>
@@ -290,6 +293,7 @@ session_start();
                       class="col-8">
                       <div class="ObjectBackground">
                         <div class="subjectname">
+                        <i class="fas fa-user fa-lg fa-fw" style="-webkit-text-fill-color: #19bd68;"></i>
                           <?php echo $row['Name']; ?>
                         </div>
                       </div>

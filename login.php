@@ -25,7 +25,7 @@ if (isset($_SESSION['Login'])) {
   <!-- <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css" rel="stylesheet"> -->
   <!--====================== stylesheets ==========================-->
 </head>
-<body>
+<body class="dark-theme">
 
 
   <?php include "nevbar.php"; ?>
@@ -79,23 +79,31 @@ if (isset($_SESSION['Login'])) {
 
                   <form class="mx-1 mx-md-4" method="POST" id="login_form">
                     <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-envelope fa-lg me-3 fa-fw formicon"></i>
                       <div class="form-outline flex-fill mb-0">
                         <?php
                         if ($status == "student") {
                           echo '<label class=" form-label h5 fw-bold" for="StudentID">Student ID</label>
+                          <div class="dflex">
+                          <i class="fas fa-envelope fa-lg me-3 fa-fw formicon"></i>
                           <input class="form-control dark-theme" autocomplete="on" type="number" id="StudentID"
-                            name="StudentID" autofocus="autofocus" />';
+                          name="StudentID" autofocus="autofocus" />
+                          </div>';
                         }
                         else if ($status == "teacher") {
                           echo '<label class=" form-label h5 fw-bold" for="TeacherID">Teacher ID</label>
-                                  <input class="form-control dark-theme" autocomplete="on" type="number" id="TeacherID"
-                                  name="TeacherID" autofocus="autofocus" />';
+                                  <div class="dflex">
+                                    <i class="fas fa-envelope fa-lg me-3 fa-fw formicon"></i>
+                                    <input class="form-control dark-theme" autocomplete="on" type="number" id="TeacherID"
+                                    name="TeacherID" autofocus="autofocus" />
+                                  </div>';
                         }
                         else {
                           echo '<label class=" form-label h5 fw-bold" for="StudentID">Student ID</label>
+                          <div class="dflex">
+                          <i class="fas fa-envelope fa-lg me-3 fa-fw formicon"></i>
                           <input class="form-control dark-theme" autocomplete="on" type="number" id="StudentID"
-                            name="StudentID" autofocus="autofocus" />';
+                          name="StudentID" autofocus="autofocus" />
+                          </div>';
                         }
                         ?>
 
@@ -104,7 +112,7 @@ if (isset($_SESSION['Login'])) {
 
 
                     <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-lock fa-lg me-3 fa-fw formicon" style="transform: translate(0px, -22px);"></i>
+                      <!-- style="transform: translate(0px, 15px);" -->
                       <div class="form-outline flex-fill mb-0">
                         <div class="dflex" style="justify-content: space-between;">
                           <label class="form-label h5 fw-bold" for="password">Password</label>
@@ -114,7 +122,9 @@ if (isset($_SESSION['Login'])) {
                               style="padding-left:0px;padding-top: 2px;padding-right:2px">show</div>
                           </div>
                         </div>
-                        <div class="dflex" style="align-items: flex-start">
+                        <div class="dflex">
+
+                        <i class="fas fa-lock fa-lg me-3 fa-fw formicon"></i>
                           <input class="form-control dark-theme" autocomplete="on" type="Password" id="password"
                             name="Password" />
                         </div>
