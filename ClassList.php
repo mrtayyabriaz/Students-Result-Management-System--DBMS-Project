@@ -62,7 +62,7 @@ session_start();
       <div class="container dark-theme-light">
         <!-- <h2 class="YourClass">Your Classes</h2> -->
         <div class="Classlist">
-          <ol id="classlist">
+          <ol id="classlist" style="padding: 10px;">
 
             <?php
             $TeacherID = $_SESSION['TID'];

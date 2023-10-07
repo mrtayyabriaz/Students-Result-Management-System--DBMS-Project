@@ -376,7 +376,7 @@ body {
       color: #0005bc;
       text-decoration: none;
       display: block;
-      padding-right: 0px;
+      padding: 0px;
 
       .subjectname,
       .ManageSubject {
@@ -487,12 +487,12 @@ body {
 }
 
 .StudentDiv {
-  border-top: 1px #69ff70c4 dashed;
+  border-bottom: 2px rgb(29 179 35 / 81%) solid;
+  padding: 4px 0px;
   // border-left: 2px #69ff70c4 dashed;
   // border-right: 2px #69ff70c4 dashed;
   // border-bottom: 2px #69ff70c4 dashed;
   // border-radius: 5px;
-  padding: 10px 0px 10px 0px;
 }
 
 .StudentResultform {
@@ -526,7 +526,7 @@ body {
   -moz-user-select: none !important;
   user-select: none !important;
   // border-bottom: 2px solid #007e16 !important;
-  border-radius: 0px !important;
+  text-align: left;
   text-align: left;
   // .thestudentlog.obtainedmark {
   //   border: 0px !important;

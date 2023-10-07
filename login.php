@@ -119,7 +119,7 @@ if (isset($_SESSION['Login'])) {
                           <div class="pointer" style="color:#7d11f3">
                             <i class="fas fa-eye fa-solid" id="showicon"></i>
                             <div onclick="showpass(this)" class="btn"
-                              style="padding-left:0px;padding-top: 2px;padding-right:2px">show</div>
+                              style="color:#7d11f3;padding-left:0px;padding-top: 2px;padding-right:2px">show</div>
                           </div>
                         </div>
                         <div class="dflex">

@@ -275,7 +275,7 @@ session_start();
         <!--================== Students Name end ================-->
         <!--===================== add Student to class start =========================-->
         <div class="Classlist">
-          <ol id="StudentList">
+          <ol id="StudentList" class="px-3">
             <?php
             include 'submit/dbconnect.php';
             $query = "SELECT `student_login`.`Name`, `studentcombination`.`StudentID`

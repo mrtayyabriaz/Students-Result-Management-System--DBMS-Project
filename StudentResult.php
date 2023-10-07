@@ -66,7 +66,7 @@ function GetClassName($ClassID){
           <div class="boxshadow rounded">
             <!-- change style -->
             <div class="card-body p-4 p-md-5 rounded-3 dark-theme-light StudentResultform">
-              <div>
+              <div class="dflex">
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                   <?php
                   if (isset($_GET['ClassID']) && isset($_SESSION['SID']) && $_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -96,21 +96,21 @@ function GetClassName($ClassID){
                         while ($row = mysqli_fetch_array($result)) {
                           ?>
                           <div class="d-flex flex-row align-items-center  StudentDiv">
-                            <i class="fas fa-envelope fa-lg me-3 fa-fw formicon"></i>
                             <div class="form-outline flex-fill mb-0 SResultinputdiv">
                               <label class=" form-label h5 fw-bold" for="StudentID">
                                 <?php echo $row['SubjectName'] ?>
                               </label>
-                              <div class="dflex" style="border-bottom: 2px solid #007e16 !important;">
+                              <div class="dflex">
+                              <i class="fas fa-book h3 me-2 fa-fw formicon" style="-webkit-text-fill-color: #ad40ff;"></i>
                                 <input disabled style="text-align: right;"
-                                  class="studentInputText dark-theme-light thestudentlog obtainedmark studentresultinput form-control"
+                                  class="studentInputText dark-theme thestudentlog studentresultinput form-control"
                                   autocomplete="on" type="number" id="SubjectObtained<?php echo $row['SubjectID']; ?>"
                                   name="SubjectObtained<?php echo $row['SubjectID']; ?>"
                                   value="<?php echo $row['obtained']; ?>" />
                                 <span class="totalmarks">
                                   <span style="padding-right:5px;">/</span>
                                   <input disabled
-                                    class="form-control studentInputText thestudentlog dark-theme-light  totalmark studentresultinput"
+                                    class="form-control studentInputText thestudentlog dark-theme studentresultinput"
                                     autocomplete="on" type="number" id="SubjectTotal<?php echo $row['SubjectID']; ?>"
                                     name="SubjectTotal<?php echo $row['SubjectID']; ?>"
                                     value="<?php echo $row['TotalMarks']; ?>" />
