@@ -66,7 +66,7 @@ else {
   <div class="container dark-theme-light" style="padding: 2em 0px 2em 0px;border-radius: 10px;">
     
     <div class="Classlist">
-      <ol id="classlist" class="ManageContainer">
+      <ol id="classlist" class="ManageContainer p-3">
 
         <?php
         $StudentID = $_SESSION['SID'];
@@ -82,7 +82,10 @@ else {
             while ($row = mysqli_fetch_array($result)) {
               echo '
                         <a id="TheClass' . $row['ClassID'] . '" href="StudentResult.php?ClassID=' . $row['ClassID'] . '">
-                          <div class="ManageSubject">' . $row['Classname'] . '</div>
+                          <div class="ManageSubject">
+                            <i class="fa-solid fa-house-chimney-user h3 m-0 me-2" style="-webkit-text-fill-color: #5093ff;"></i>
+                              ' . $row['Classname'] . '
+                          </div>
                         </a>
                     ';
                         // <button class="col-2 btn thebutton edit" type="button"><a href="edit.php?ClassID=' . $row['ClassID'] . '">Edit</a></button>
