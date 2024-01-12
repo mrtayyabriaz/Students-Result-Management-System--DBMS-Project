@@ -6,8 +6,6 @@ $a = 0;
     <div>
       <a class="navbar-brand" href="index.php">
         <img src="images/RMS_logo_transarent.png" class="main-logo inverted" id="main-logo" alt="Logo" width="30" height="24">
-        <!-- <img src="images/RMS logo.jpg" alt="Logo" width="30" height="24"> -->
-        <!-- <img src="images/UNIVERSITY_OF_OKARA.JPG" alt="Bootstrap" width="30" height="24"> -->
       </a>
       <a class="navbar-brand" href="index.php"></a>
     </div>

@@ -18,7 +18,7 @@
 
   <section class="dark-theme">
     <div class="container mycontainer boxshadow dark-theme-light">
-      <div class="row w-100 fw-bold fs-4 select_status">Select your status</div>
+      <div class="row w-100 fw-bold fs-4 select_status">Who you are</div>
       <div class="row selectioncontainer ">
         <!-- <a href="login.html" class="col-5 student">Student</a> -->
         <!-- <a href="login.html" class="col-5 teacher">Teacher</a> -->
@@ -29,7 +29,7 @@
   </section>
 
 
-  <section class="dark-theme">
+  <section class="dark-theme d-none">
     <div class="container mycontainer boxshadow dark-theme-light">
       <div class="row w-100 fw-bold fs-4 select_status">See Desktop Application Project</div>
       <div class="row DownloadProject">
@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="col-9">
-          <a download href="project/Tayyab Riaz F21-BSSE-1049.zip">Tayyab Riaz F21-BSSE-1049.zip (1.07 MB)</a>
+          <div>Tayyab Riaz F21-BSSE-1049.zip (1.07 MB)</div>
         </div>
       </div>
     </div>
