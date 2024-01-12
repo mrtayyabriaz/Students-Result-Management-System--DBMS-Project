@@ -58,7 +58,7 @@ if (isset($_POST['TeacherID'])) {
     }
   }
   else {
-    echo "<p class=signerror onclick=remove(this)>Invalid student ID<span class=xmark><i class='fa-solid fa-xmark'></i></span><p>";
+    echo "<p class=signerror onclick=remove(this)>Invalid Teacher ID<span class=xmark><i class='fa-solid fa-xmark'></i></span><p>";
   }
 
 }
